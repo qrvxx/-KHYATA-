@@ -37,7 +37,26 @@
       "closes": "23:00"
     }
   ],
-  "sameAs": ["https://instagram.com/khyata.eg", "https://share.google/siGt2BXUcLppZ58wA"]
+  "sameAs": ["https://instagram.com/khyata.eg", "https://share.google/siGt2BXUcLppZ58wA"],
+  "areaServed": ["العجمي", "الهانوفيل", "الإسكندرية"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "هل ممكن تعديل قطعة اتفصلت من محل تاني؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ."}},
+    {"@type": "Question", "name": "ممكن تنفذوا تصميم من صورة؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة."}},
+    {"@type": "Question", "name": "بتفصلوا ملابس حريمي وأطفال وحجاب؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب."}},
+    {"@type": "Question", "name": "بتعملوا فساتين سواريه ومناسبات؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، من الفكرة للقطعة الجاهزة لأي مناسبة."}},
+    {"@type": "Question", "name": "بتفصلوا ستائر بالمتر؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، على مقاس الأودة بالظبط."}},
+    {"@type": "Question", "name": "بتعملوا مفارش وملايات؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، بخامات كويسة وخياطة متينة."}},
+    {"@type": "Question", "name": "عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك."}},
+    {"@type": "Question", "name": "بتنتجوا كميات صغيرة لبراند محلي؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى."}},
+    {"@type": "Question", "name": "فين مكان الخياطة بالظبط؟", "acceptedAnswer": {"@type": "Answer", "text": "في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية."}},
+    {"@type": "Question", "name": "مواعيد العمل إيه؟", "acceptedAnswer": {"@type": "Answer", "text": "السبت للخميس من ١ ظهرًا لـ١١ مساءً، والجمعة إجازة."}}
+  ]
 }
 </script>
 <style>
@@ -293,6 +312,33 @@
   .why-item p{ font-size:14.5px; color:var(--ink-soft); margin:0; }
 
   /* ---------- location ---------- */
+  .faq-list{ margin-top:28px; display:flex; flex-direction:column; gap:12px; }
+  .faq-item{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:16px 22px;
+  }
+  .faq-item summary{
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    font-size:22px;
+    color:var(--thread-red);
+    margin-inline-start:12px;
+    transition:transform .2s ease;
+  }
+  .faq-item[open] summary::after{ transform:rotate(45deg); }
+  .faq-item p{ color:var(--ink-soft); font-size:15px; margin:12px 0 0; }
+
   .loc-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -396,7 +442,7 @@
     <span class="eyebrow">خبرتنا</span>
     <h2 class="section-title">٣٠ سنة خبرة في التفصيل والتصليح</h2>
     <p class="section-lead">
-      خياطة | KHYATA في العجمي، الإسكندرية — تفصيل وتصليح ملابس حريمي وأطفال بدقة والتزام بالمواعيد.
+      خياطة | KHYATA في الهانوفيل، العجمي، الإسكندرية — تفصيل وتصليح ملابس حريمي وأطفال بدقة والتزام بالمواعيد.
     </p>
   </section>
 
@@ -455,6 +501,55 @@
       <div class="why-item"><span class="num">٢</span><p>بنسلّم القطعة زي ما اتفقنا، من غير مفاجآت</p></div>
       <div class="why-item"><span class="num">٣</span><p>أسعار مناسبة لكل الجيوب</p></div>
       <div class="why-item"><span class="num">٤</span><p>حريمي، أطفال، ستائر، ومفارش في مكان واحد</p></div>
+    </div>
+  </section>
+
+  <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
+
+  <section id="faq">
+    <span class="eyebrow">أسئلة شائعة</span>
+    <h2 class="section-title">أسئلة عن التفصيل والتصليح في العجمي</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>هل ممكن تعديل قطعة اتفصلت من محل تاني؟</summary>
+        <p>أيوة، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ.</p>
+      </details>
+      <details class="faq-item">
+        <summary>ممكن تنفذوا تصميم من صورة؟</summary>
+        <p>أيوة، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>بتفصلوا ملابس حريمي وأطفال وحجاب؟</summary>
+        <p>أيوة، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب.</p>
+      </details>
+      <details class="faq-item">
+        <summary>بتعملوا فساتين سواريه ومناسبات؟</summary>
+        <p>أيوة، من الفكرة للقطعة الجاهزة لأي مناسبة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>بتفصلوا ستائر بالمتر؟</summary>
+        <p>أيوة، على مقاس الأودة بالظبط.</p>
+      </details>
+      <details class="faq-item">
+        <summary>بتعملوا مفارش وملايات؟</summary>
+        <p>أيوة، بخامات كويسة وخياطة متينة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟</summary>
+        <p>أيوة، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك.</p>
+      </details>
+      <details class="faq-item">
+        <summary>بتنتجوا كميات صغيرة لبراند محلي؟</summary>
+        <p>أيوة، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى.</p>
+      </details>
+      <details class="faq-item">
+        <summary>فين مكان الخياطة بالظبط؟</summary>
+        <p>في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية.</p>
+      </details>
+      <details class="faq-item">
+        <summary>مواعيد العمل إيه؟</summary>
+        <p>السبت للخميس من ١ ظهرًا لـ١١ مساءً، والجمعة إجازة.</p>
+      </details>
     </div>
   </section>
 
