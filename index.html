@@ -46,14 +46,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "هل ممكن تعديل قطعة اتفصلت من محل تاني؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ."}},
-    {"@type": "Question", "name": "ممكن تنفذوا تصميم من صورة؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة."}},
-    {"@type": "Question", "name": "بتفصلوا ملابس حريمي وأطفال وحجاب؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب."}},
-    {"@type": "Question", "name": "بتعملوا فساتين سواريه ومناسبات؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، من الفكرة للقطعة الجاهزة لأي مناسبة."}},
-    {"@type": "Question", "name": "بتفصلوا ستائر بالمتر؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، على مقاس الأودة بالظبط."}},
-    {"@type": "Question", "name": "بتعملوا مفارش وملايات؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، بخامات كويسة وخياطة متينة."}},
-    {"@type": "Question", "name": "عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك."}},
-    {"@type": "Question", "name": "بتنتجوا كميات صغيرة لبراند محلي؟", "acceptedAnswer": {"@type": "Answer", "text": "أيوة، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى."}},
+    {"@type": "Question", "name": "هل ممكن تعديل قطعة اتفصلت من محل تاني؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ."}},
+    {"@type": "Question", "name": "ممكن تنفذوا تصميم من صورة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة."}},
+    {"@type": "Question", "name": "بتفصلوا ملابس حريمي وأطفال وحجاب؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب."}},
+    {"@type": "Question", "name": "بتعملوا فساتين سواريه ومناسبات؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، من الفكرة للقطعة الجاهزة لأي مناسبة."}},
+    {"@type": "Question", "name": "بتفصلوا ستائر بالمتر؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، على مقاس الأودة بالظبط."}},
+    {"@type": "Question", "name": "بتعملوا مفارش وملايات؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، بخامات كويسة وخياطة متينة."}},
+    {"@type": "Question", "name": "عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك."}},
+    {"@type": "Question", "name": "بتنتجوا كميات صغيرة لبراند محلي؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى."}},
     {"@type": "Question", "name": "فين مكان الخياطة بالظبط؟", "acceptedAnswer": {"@type": "Answer", "text": "في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية."}},
     {"@type": "Question", "name": "مواعيد العمل إيه؟", "acceptedAnswer": {"@type": "Answer", "text": "السبت للخميس من ١ ظهرًا لـ١١ مساءً، والجمعة إجازة."}}
   ]
@@ -139,7 +139,6 @@
     .stitch circle{ transition:none; opacity:1; }
   }
 
-  /* ---------- header ---------- */
   header{
     padding:20px 0;
     display:flex;
@@ -148,6 +147,7 @@
     position:relative;
     z-index:2;
   }
+
   .visually-hidden{
     position:absolute; width:1px; height:1px; padding:0; margin:-1px;
     overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
@@ -198,7 +198,7 @@
     flex-wrap:wrap;
   }
   .btn-primary{
-    background:var(--thread-red);
+    background:linear-gradient(180deg, #a84535, var(--thread-red));
     color:#fbf6e9;
     padding:15px 30px;
     border-radius:999px;
@@ -208,10 +208,10 @@
     display:inline-flex;
     align-items:center;
     gap:10px;
-    box-shadow:0 8px 20px -8px rgba(158,58,44,.5);
+    box-shadow:0 14px 26px -10px rgba(158,58,44,.55), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -2px 0 rgba(0,0,0,.12);
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(158,58,44,.55); }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 20px 32px -10px rgba(158,58,44,.6), inset 0 1px 0 rgba(255,255,255,.25), inset 0 -2px 0 rgba(0,0,0,.12); }
   .btn-ghost{
     border:1.5px solid var(--line);
     color:var(--ink);
@@ -236,7 +236,7 @@
   }
 
   /* ---------- sections generic ---------- */
-  section{ padding:56px 0; position:relative; z-index:1; }
+  section{ padding:56px 0; position:relative; z-index:1; perspective:1000px; }
   .eyebrow{
     font-family:'Poppins',sans-serif;
     font-size:12px;
@@ -250,6 +250,43 @@
   .section-lead{ color:var(--ink-soft); max-width:640px; font-size:16.5px; }
 
   /* ---------- about ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(26px) rotateX(6deg);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in-view{ opacity:1; transform:translateY(0) rotateX(0deg); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none; opacity:1; transform:none; }
+  }
+
+  .hero::before, .services-grid::before{
+    content:"";
+    position:absolute;
+    width:360px; height:360px;
+    background:radial-gradient(circle, rgba(158,58,44,.14), transparent 70%);
+    filter:blur(30px);
+    z-index:-1;
+    pointer-events:none;
+  }
+  .hero{ position:relative; overflow:visible; }
+  .hero::before{ top:-40px; inset-inline-start:50%; transform:translateX(-50%); }
+  .services-grid{ position:relative; }
+  .services-grid::before{ top:-60px; inset-inline-end:-80px; width:280px; height:280px; background:radial-gradient(circle, rgba(181,129,31,.14), transparent 70%); }
+
+  @keyframes float-logo{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+  }
+  .hero-logo{
+    filter:drop-shadow(0 14px 22px rgba(46,32,19,.18));
+    animation:float-logo 6s ease-in-out infinite;
+  }
+  .logo-img{ filter:drop-shadow(0 4px 8px rgba(46,32,19,.15)); }
+  @media (prefers-reduced-motion: reduce){
+    .hero-logo{ animation:none; }
+  }
+
   .about-grid{
     display:grid;
     grid-template-columns:1.1fr .9fr;
@@ -279,12 +316,13 @@
     border:1px solid var(--line);
     border-radius:var(--radius);
     padding:24px 22px;
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    box-shadow:0 1px 2px rgba(46,32,19,.05), 0 10px 24px -14px rgba(46,32,19,.22);
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   }
   .service-card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-6px) scale(1.015);
     border-color:var(--thread-gold);
-    box-shadow:0 14px 28px -18px rgba(46,32,19,.35);
+    box-shadow:0 20px 34px -16px rgba(46,32,19,.32);
   }
   .service-icon{
     width:40px; height:40px;
@@ -318,6 +356,7 @@
     border:1px solid var(--line);
     border-radius:var(--radius);
     padding:16px 22px;
+    box-shadow:0 1px 2px rgba(46,32,19,.05), 0 8px 18px -14px rgba(46,32,19,.2);
   }
   .faq-item summary{
     font-weight:700;
@@ -350,6 +389,7 @@
     border:1px solid var(--line);
     border-radius:var(--radius);
     padding:28px;
+    box-shadow:0 1px 2px rgba(46,32,19,.05), 0 10px 22px -14px rgba(46,32,19,.22);
   }
   .loc-card h3{ font-family:'Cairo'; font-size:18px; font-weight:700; margin-bottom:14px; }
   table.hours{ width:100%; border-collapse:collapse; font-size:14.5px; }
@@ -426,7 +466,7 @@
   <section class="hero" id="top">
     <h1 class="visually-hidden">خياطة | KHYATA — تفصيل وتصليح ملابس في العجمي، الإسكندرية</h1>
     <img src="khyata-logo.png" alt="خياطة | KHYATA" class="hero-logo">
-    <p class="tagline">القطعة اللي مش مظبوطة، بنظبطها. والتفصيلة اللي في خيالك، بنطلعها لبس.</p>
+    <p class="tagline">تفصيل وتصليح ملابس بدقة والتزام بالمواعيد، من أول القياس لحد التسليم.</p>
     <div class="hero-ctas">
       <a class="btn-primary" href="https://wa.me/201145250019" target="_blank" rel="noopener">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.54 1.93 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.45.2.52.32.06.12.06.7-.18 1.39z"/></svg>
@@ -453,37 +493,37 @@
     <h2 class="section-title">خدماتنا</h2>
     <p class="section-lead">من تعديل بسيط لحد تفصيلة كاملة من الصفر.</p>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8 20 19M8.5 16 20 5"/></svg>
         <h3>تصليح وتعديل الملابس</h3>
-        <p>غلطة في القياس أو التفصيل من محل تاني؟ بنظبطها زي الأول.</p>
+        <p>بنصلح ونعدل مقاس وتفصيلة أي قطعة.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M8 7h8l2 5-2 9H8L6 12z"/></svg>
         <h3>تفصيل حريمي، أطفال، وحجاب</h3>
         <p>قطعة على مقاسك بالظبط، بالتصميم اللي في بالك.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3v18M17 3v18M4 8h6M14 8h6M4 16h6M14 16h6"/></svg>
         <h3>فساتين سواريه ومناسبات</h3>
         <p>من الفكرة للقطعة الجاهزة، لأي مناسبة.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v4H4zM4 8v12M20 8v12M4 20h16"/></svg>
         <h3>ستائر بالمتر</h3>
         <p>مقاس أوضتك بالظبط، بالمتر وبدون تعقيد.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 10h16"/></svg>
         <h3>مفارش وملايات</h3>
         <p>خامات كويسة وخياطة متينة تعيش معاكي.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M15 4l3 3-3 3M9 20l-3-3 3-3"/></svg>
         <h3>إعادة تدوير الهدوم القديمة</h3>
         <p>جينز قديم؟ ممكن نعمل منه فستان أو جامبسوت لبنتك، وتبقى قطعة جديدة.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
         <h3>تصنيع للبراندات المحلية</h3>
         <p>عندك براند وعايزة تبدأي بكميات صغيرة؟ بننتجلك مجموعتك الأولى.</p>
@@ -497,10 +537,10 @@
     <span class="eyebrow">ليه إحنا</span>
     <h2 class="section-title">ليه تختاري خياطة</h2>
     <div class="why-grid">
-      <div class="why-item"><span class="num">١</span><p>٣٠ سنة خبرة في التفصيل والتصليح</p></div>
-      <div class="why-item"><span class="num">٢</span><p>بنسلّم القطعة زي ما اتفقنا، من غير مفاجآت</p></div>
-      <div class="why-item"><span class="num">٣</span><p>أسعار مناسبة لكل الجيوب</p></div>
-      <div class="why-item"><span class="num">٤</span><p>حريمي، أطفال، ستائر، ومفارش في مكان واحد</p></div>
+      <div class="why-item reveal"><span class="num">١</span><p>٣٠ سنة خبرة في التفصيل والتصليح</p></div>
+      <div class="why-item reveal"><span class="num">٢</span><p>التزام كامل بالمواعيد والتفاصيل المتفق عليها</p></div>
+      <div class="why-item reveal"><span class="num">٣</span><p>أسعار عادلة تتناسب مع الجودة</p></div>
+      <div class="why-item reveal"><span class="num">٤</span><p>حريمي، أطفال، ستائر، ومفارش في مكان واحد</p></div>
     </div>
   </section>
 
@@ -510,43 +550,43 @@
     <span class="eyebrow">أسئلة شائعة</span>
     <h2 class="section-title">أسئلة عن التفصيل والتصليح في العجمي</h2>
     <div class="faq-list">
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>هل ممكن تعديل قطعة اتفصلت من محل تاني؟</summary>
-        <p>أيوة، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ.</p>
+        <p>نعم، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>ممكن تنفذوا تصميم من صورة؟</summary>
-        <p>أيوة، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة.</p>
+        <p>نعم، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>بتفصلوا ملابس حريمي وأطفال وحجاب؟</summary>
-        <p>أيوة، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب.</p>
+        <p>نعم، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>بتعملوا فساتين سواريه ومناسبات؟</summary>
-        <p>أيوة، من الفكرة للقطعة الجاهزة لأي مناسبة.</p>
+        <p>نعم، من الفكرة للقطعة الجاهزة لأي مناسبة.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>بتفصلوا ستائر بالمتر؟</summary>
-        <p>أيوة، على مقاس الأودة بالظبط.</p>
+        <p>نعم، على مقاس الأودة بالظبط.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>بتعملوا مفارش وملايات؟</summary>
-        <p>أيوة، بخامات كويسة وخياطة متينة.</p>
+        <p>نعم، بخامات كويسة وخياطة متينة.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟</summary>
-        <p>أيوة، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك.</p>
+        <p>نعم، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>بتنتجوا كميات صغيرة لبراند محلي؟</summary>
-        <p>أيوة، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى.</p>
+        <p>نعم، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>فين مكان الخياطة بالظبط؟</summary>
         <p>في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>مواعيد العمل إيه؟</summary>
         <p>السبت للخميس من ١ ظهرًا لـ١١ مساءً، والجمعة إجازة.</p>
       </details>
@@ -559,14 +599,14 @@
     <span class="eyebrow">تعالي زورينا</span>
     <h2 class="section-title">مواعيدنا وموقعنا</h2>
     <div class="loc-grid">
-      <div class="loc-card">
+      <div class="loc-card reveal">
         <h3>مواعيد العمل</h3>
         <table class="hours">
           <tr><td>السبت – الخميس</td><td>١ ظهرًا – ١١ مساءً</td></tr>
           <tr><td>الجمعة</td><td>إجازة</td></tr>
         </table>
       </div>
-      <div class="loc-card">
+      <div class="loc-card reveal">
         <h3>العنوان</h3>
         <p class="addr-text">الهانوفيل، شارع عثمان بن عفان، متفرع من شارع رضوان، الإسكندرية 21575</p>
         <a class="btn-ghost" href="https://share.google/siGt2BXUcLppZ58wA" target="_blank" rel="noopener">شوفينا على جوجل</a>
@@ -575,8 +615,8 @@
   </section>
 
   <div class="final-cta">
-    <h2>جاهزين نظبطلك القطعة</h2>
-    <p>ابعتي لنا صورة التصميم أو القطعة اللي عايزة تتظبط، وهنقولك التفاصيل.</p>
+    <h2>جاهزون لتنفيذ طلبك</h2>
+    <p>أرسلي صورة التصميم أو تفاصيل القطعة، وسنوضح لك الخطوات والتفاصيل.</p>
     <a class="btn-primary" href="https://wa.me/201145250019" target="_blank" rel="noopener">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.54 1.93 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.45.2.52.32.06.12.06.7-.18 1.39z"/></svg>
       واتساب
@@ -607,6 +647,14 @@
     });
   }, { threshold: 0.4 });
   stitches.forEach(s=>obs.observe(s));
+
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in-view'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(r=>revealObs.observe(r));
 </script>
 
 </body>
