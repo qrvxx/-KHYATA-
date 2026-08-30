@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://qrvxx.github.io/-KHYATA-/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,7 +75,7 @@
   }
 
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; overflow-x:hidden; width:100%; }
   body{
     margin:0;
     background:var(--bg);
@@ -139,6 +139,26 @@
     .stitch circle{ transition:none; opacity:1; }
   }
 
+  .header-actions{ display:flex; align-items:center; gap:10px; }
+  .lang-toggle{
+    border:1.5px solid var(--line);
+    background:var(--bg-card);
+    color:var(--ink);
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.05em;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .lang-toggle:hover{ border-color:var(--thread-gold); }
+
+  body.lang-en h1, body.lang-en h2, body.lang-en h3{
+    font-family:'Playfair Display', serif;
+  }
+  body.lang-en{ font-family:'Cairo', sans-serif; }
+
   header{
     padding:20px 0;
     display:flex;
@@ -171,6 +191,21 @@
     transition:background .2s ease, transform .2s ease;
   }
   .nav-cta:hover{ background:var(--thread-red-dark); transform:translateY(-1px); }
+  .lang-toggle{
+    border:1.5px solid var(--line);
+    background:var(--bg-card);
+    color:var(--ink);
+    padding:8px 14px;
+    border-radius:999px;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    cursor:pointer;
+    margin-inline-end:10px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .lang-toggle:hover{ border-color:var(--thread-gold); }
+  .header-actions{ display:flex; align-items:center; }
 
   /* ---------- hero ---------- */
   .hero{
@@ -211,7 +246,6 @@
     box-shadow:0 14px 26px -10px rgba(158,58,44,.55), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -2px 0 rgba(0,0,0,.12);
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 20px 32px -10px rgba(158,58,44,.6), inset 0 1px 0 rgba(255,255,255,.25), inset 0 -2px 0 rgba(0,0,0,.12); }
   .btn-ghost{
     border:1.5px solid var(--line);
     color:var(--ink);
@@ -222,7 +256,6 @@
     font-size:15px;
     transition:border-color .2s ease, background .2s ease;
   }
-  .btn-ghost:hover{ border-color:var(--thread-gold); background:var(--bg-soft); }
 
   .stars{ color:var(--thread-gold); font-size:15px; letter-spacing:2px; }
   .rating-line{
@@ -236,7 +269,7 @@
   }
 
   /* ---------- sections generic ---------- */
-  section{ padding:56px 0; position:relative; z-index:1; perspective:1000px; }
+  section{ padding:56px 0; position:relative; z-index:1; }
   .eyebrow{
     font-family:'Poppins',sans-serif;
     font-size:12px;
@@ -252,40 +285,21 @@
   /* ---------- about ---------- */
   .reveal{
     opacity:0;
-    transform:translateY(26px) rotateX(6deg);
-    transition:opacity .7s ease, transform .7s ease;
+    transform:translateY(26px);
+    transition:opacity .6s ease, transform .6s ease;
   }
-  .reveal.in-view{ opacity:1; transform:translateY(0) rotateX(0deg); }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
   @media (prefers-reduced-motion: reduce){
     .reveal{ transition:none; opacity:1; transform:none; }
   }
 
-  .hero::before, .services-grid::before{
-    content:"";
-    position:absolute;
-    width:360px; height:360px;
-    background:radial-gradient(circle, rgba(158,58,44,.14), transparent 70%);
-    filter:blur(30px);
-    z-index:-1;
-    pointer-events:none;
-  }
-  .hero{ position:relative; overflow:visible; }
-  .hero::before{ top:-40px; inset-inline-start:50%; transform:translateX(-50%); }
+  .hero{ position:relative; }
   .services-grid{ position:relative; }
-  .services-grid::before{ top:-60px; inset-inline-end:-80px; width:280px; height:280px; background:radial-gradient(circle, rgba(181,129,31,.14), transparent 70%); }
 
-  @keyframes float-logo{
-    0%,100%{ transform:translateY(0); }
-    50%{ transform:translateY(-10px); }
-  }
   .hero-logo{
     filter:drop-shadow(0 14px 22px rgba(46,32,19,.18));
-    animation:float-logo 6s ease-in-out infinite;
   }
   .logo-img{ filter:drop-shadow(0 4px 8px rgba(46,32,19,.15)); }
-  @media (prefers-reduced-motion: reduce){
-    .hero-logo{ animation:none; }
-  }
 
   .about-grid{
     display:grid;
@@ -319,10 +333,14 @@
     box-shadow:0 1px 2px rgba(46,32,19,.05), 0 10px 24px -14px rgba(46,32,19,.22);
     transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   }
-  .service-card:hover{
-    transform:translateY(-6px) scale(1.015);
-    border-color:var(--thread-gold);
-    box-shadow:0 20px 34px -16px rgba(46,32,19,.32);
+  @media (hover:hover) and (pointer:fine){
+    .service-card:hover{
+      transform:translateY(-6px) scale(1.015);
+      border-color:var(--thread-gold);
+      box-shadow:0 20px 34px -16px rgba(46,32,19,.32);
+    }
+    .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 20px 32px -10px rgba(158,58,44,.6), inset 0 1px 0 rgba(255,255,255,.25), inset 0 -2px 0 rgba(0,0,0,.12); }
+    .btn-ghost:hover{ border-color:var(--thread-gold); background:var(--bg-soft); }
   }
   .service-icon{
     width:40px; height:40px;
@@ -394,7 +412,7 @@
   .loc-card h3{ font-family:'Cairo'; font-size:18px; font-weight:700; margin-bottom:14px; }
   table.hours{ width:100%; border-collapse:collapse; font-size:14.5px; }
   table.hours td{ padding:8px 0; border-bottom:1px dashed var(--line); color:var(--ink-soft); }
-  table.hours td:last-child{ text-align:left; color:var(--ink); font-weight:600; }
+  table.hours td:last-child{ text-align:end; color:var(--ink); font-weight:600; }
   .addr-text{ color:var(--ink-soft); font-size:15px; margin-bottom:18px; }
 
   /* ---------- final cta ---------- */
@@ -460,28 +478,31 @@
     <a class="brand" href="#top" aria-label="خياطة | KHYATA">
       <img src="khyata-logo.png" alt="خياطة | KHYATA" class="logo-img">
     </a>
-    <a class="nav-cta" href="https://wa.me/201145250019" target="_blank" rel="noopener">تواصلي معنا</a>
+    <div class="header-actions">
+      <button type="button" id="langToggle" class="lang-toggle" aria-label="Switch language">EN</button>
+      <a class="nav-cta i18n" data-en="Contact Us" href="https://wa.me/201145250019" target="_blank" rel="noopener">تواصلي معنا</a>
+    </div>
   </header>
 
   <section class="hero" id="top">
     <h1 class="visually-hidden">خياطة | KHYATA — تفصيل وتصليح ملابس في العجمي، الإسكندرية</h1>
     <img src="khyata-logo.png" alt="خياطة | KHYATA" class="hero-logo">
-    <p class="tagline">تفصيل وتصليح ملابس بدقة والتزام بالمواعيد، من أول القياس لحد التسليم.</p>
+    <p class="tagline i18n" data-en="Tailoring &amp; alterations for women and children in Agami, Alexandria.">تفصيل وتصليح ملابس نسائية وأطفال في العجمي، الإسكندرية.</p>
     <div class="hero-ctas">
       <a class="btn-primary" href="https://wa.me/201145250019" target="_blank" rel="noopener">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.54 1.93 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.45.2.52.32.06.12.06.7-.18 1.39z"/></svg>
-        ابعتي لنا صورة التصميم وهنقولك التفاصيل
+        <span class="i18n" data-en="Send us a design photo for details">ابعتي لنا صورة التصميم وهنقولك التفاصيل</span>
       </a>
-      <a class="btn-ghost" href="#services">شوفي الخدمات</a>
+      <a class="btn-ghost i18n" data-en="View Services" href="#services">شوفي الخدمات</a>
     </div>
   </section>
 
   <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
 
   <section id="about">
-    <span class="eyebrow">خبرتنا</span>
-    <h2 class="section-title">٣٠ سنة خبرة في التفصيل والتصليح</h2>
-    <p class="section-lead">
+    <span class="eyebrow i18n" data-en="Our Experience">خبرتنا</span>
+    <h2 class="section-title i18n" data-en="30 Years of Tailoring Experience">٣٠ سنة خبرة في التفصيل والتصليح</h2>
+    <p class="section-lead i18n" data-en="KHYATA in Hanoville, Agami, Alexandria — precise tailoring and alterations for women and children, delivered on time.">
       خياطة | KHYATA في الهانوفيل، العجمي، الإسكندرية — تفصيل وتصليح ملابس حريمي وأطفال بدقة والتزام بالمواعيد.
     </p>
   </section>
@@ -489,44 +510,44 @@
   <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
 
   <section id="services">
-    <span class="eyebrow">إيه اللي بنعمله</span>
-    <h2 class="section-title">خدماتنا</h2>
-    <p class="section-lead">من تعديل بسيط لحد تفصيلة كاملة من الصفر.</p>
+    <span class="eyebrow i18n" data-en="What We Do">إيه اللي بنعمله</span>
+    <h2 class="section-title i18n" data-en="Our Services">خدماتنا</h2>
+    <p class="section-lead i18n" data-en="From a simple alteration to a full custom piece.">من تعديل بسيط لحد تفصيلة كاملة من الصفر.</p>
     <div class="services-grid">
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8 20 19M8.5 16 20 5"/></svg>
-        <h3>تصليح وتعديل الملابس</h3>
-        <p>بنصلح ونعدل مقاس وتفصيلة أي قطعة.</p>
+        <h3 class="i18n" data-en="Alterations &amp; Repairs">تصليح وتعديل الملابس</h3>
+        <p class="i18n" data-en="We fix and adjust the fit and cut of any garment.">بنصلح ونعدل مقاس وتفصيلة أي قطعة.</p>
       </div>
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M8 7h8l2 5-2 9H8L6 12z"/></svg>
-        <h3>تفصيل حريمي، أطفال، وحجاب</h3>
-        <p>قطعة على مقاسك بالظبط، بالتصميم اللي في بالك.</p>
+        <h3 class="i18n" data-en="Women's, Children's &amp; Hijab Tailoring">تفصيل حريمي، أطفال، وحجاب</h3>
+        <p class="i18n" data-en="Custom-fit pieces made to your exact design.">قطعة على مقاسك بالظبط، بالتصميم اللي في بالك.</p>
       </div>
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3v18M17 3v18M4 8h6M14 8h6M4 16h6M14 16h6"/></svg>
-        <h3>فساتين سواريه ومناسبات</h3>
-        <p>من الفكرة للقطعة الجاهزة، لأي مناسبة.</p>
+        <h3 class="i18n" data-en="Evening &amp; Occasion Dresses">فساتين سواريه ومناسبات</h3>
+        <p class="i18n" data-en="From concept to finished piece, for any occasion.">من الفكرة للقطعة الجاهزة، لأي مناسبة.</p>
       </div>
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v4H4zM4 8v12M20 8v12M4 20h16"/></svg>
-        <h3>ستائر بالمتر</h3>
-        <p>مقاس أوضتك بالظبط، بالمتر وبدون تعقيد.</p>
+        <h3 class="i18n" data-en="Curtains by the Meter">ستائر بالمتر</h3>
+        <p class="i18n" data-en="Made to your room's exact measurements.">مقاس أوضتك بالظبط، بالمتر وبدون تعقيد.</p>
       </div>
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 10h16"/></svg>
-        <h3>مفارش وملايات</h3>
-        <p>خامات كويسة وخياطة متينة تعيش معاكي.</p>
+        <h3 class="i18n" data-en="Bedspreads &amp; Linens">مفارش وملايات</h3>
+        <p class="i18n" data-en="Quality fabric and durable stitching that lasts.">خامات كويسة وخياطة متينة تعيش معاكي.</p>
       </div>
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M15 4l3 3-3 3M9 20l-3-3 3-3"/></svg>
-        <h3>إعادة تدوير الهدوم القديمة</h3>
-        <p>جينز قديم؟ ممكن نعمل منه فستان أو جامبسوت لبنتك، وتبقى قطعة جديدة.</p>
+        <h3 class="i18n" data-en="Upcycling Old Clothes">إعادة تدوير الهدوم القديمة</h3>
+        <p class="i18n" data-en="Old jeans can become a dress or jumpsuit for your daughter — a brand-new piece.">جينز قديم؟ ممكن نعمل منه فستان أو جامبسوت لبنتك، وتبقى قطعة جديدة.</p>
       </div>
       <div class="service-card reveal">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
-        <h3>تصنيع للبراندات المحلية</h3>
-        <p>عندك براند وعايزة تبدأي بكميات صغيرة؟ بننتجلك مجموعتك الأولى.</p>
+        <h3 class="i18n" data-en="Small-Batch Manufacturing for Brands">تصنيع للبراندات المحلية</h3>
+        <p class="i18n" data-en="Have a brand and want to start small? We'll produce your first collection.">عندك براند وعايزة تبدأي بكميات صغيرة؟ بننتجلك مجموعتك الأولى.</p>
       </div>
     </div>
   </section>
@@ -534,61 +555,61 @@
   <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
 
   <section id="why">
-    <span class="eyebrow">ليه إحنا</span>
-    <h2 class="section-title">ليه تختاري خياطة</h2>
+    <span class="eyebrow i18n" data-en="Why Us">ليه إحنا</span>
+    <h2 class="section-title i18n" data-en="Why Choose KHYATA">ليه تختاري خياطة</h2>
     <div class="why-grid">
-      <div class="why-item reveal"><span class="num">١</span><p>٣٠ سنة خبرة في التفصيل والتصليح</p></div>
-      <div class="why-item reveal"><span class="num">٢</span><p>التزام كامل بالمواعيد والتفاصيل المتفق عليها</p></div>
-      <div class="why-item reveal"><span class="num">٣</span><p>أسعار عادلة تتناسب مع الجودة</p></div>
-      <div class="why-item reveal"><span class="num">٤</span><p>حريمي، أطفال، ستائر، ومفارش في مكان واحد</p></div>
+      <div class="why-item reveal"><span class="num i18n" data-en="1">١</span><p class="i18n" data-en="30 years of tailoring experience">٣٠ سنة خبرة في التفصيل والتصليح</p></div>
+      <div class="why-item reveal"><span class="num i18n" data-en="2">٢</span><p class="i18n" data-en="Full commitment to deadlines and agreed details">التزام كامل بالمواعيد والتفاصيل المتفق عليها</p></div>
+      <div class="why-item reveal"><span class="num i18n" data-en="3">٣</span><p class="i18n" data-en="Fair prices that match the quality">أسعار عادلة تتناسب مع الجودة</p></div>
+      <div class="why-item reveal"><span class="num i18n" data-en="4">٤</span><p class="i18n" data-en="Women's, children's, curtains, and linens all in one place">حريمي، أطفال، ستائر، ومفارش في مكان واحد</p></div>
     </div>
   </section>
 
   <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
 
   <section id="faq">
-    <span class="eyebrow">أسئلة شائعة</span>
-    <h2 class="section-title">أسئلة عن التفصيل والتصليح في العجمي</h2>
+    <span class="eyebrow i18n" data-en="FAQ">أسئلة شائعة</span>
+    <h2 class="section-title i18n" data-en="Questions About Tailoring in Agami">أسئلة عن التفصيل والتصليح في العجمي</h2>
     <div class="faq-list">
       <details class="faq-item reveal">
-        <summary>هل ممكن تعديل قطعة اتفصلت من محل تاني؟</summary>
-        <p>نعم، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ.</p>
+        <summary class="i18n" data-en="Can you alter a piece made elsewhere?">هل ممكن تعديل قطعة اتفصلت من محل تاني؟</summary>
+        <p class="i18n" data-en="Yes, we inspect the piece and determine the needed adjustment based on fit and fabric, and explain the details before starting.">نعم، بنفحص القطعة ونحدد التعديل المطلوب حسب المقاس والقماش، ونوضحلك التفاصيل قبل التنفيذ.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>ممكن تنفذوا تصميم من صورة؟</summary>
-        <p>نعم، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة.</p>
+        <summary class="i18n" data-en="Can you make a design from a photo?">ممكن تنفذوا تصميم من صورة؟</summary>
+        <p class="i18n" data-en="Yes, send the design photo on WhatsApp and we'll review the details, fabric, and measurements needed.">نعم، ابعتي صورة التصميم على واتساب، وهنراجع التفاصيل والخامات والمقاسات المطلوبة.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>بتفصلوا ملابس حريمي وأطفال وحجاب؟</summary>
-        <p>نعم، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب.</p>
+        <summary class="i18n" data-en="Do you tailor women's, children's, and hijab clothing?">بتفصلوا ملابس حريمي وأطفال وحجاب؟</summary>
+        <p class="i18n" data-en="Yes, full custom tailoring for women, children, and hijab wear.">نعم، تفصيل كامل على المقاس لحريمي، أطفال، وحجاب.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>بتعملوا فساتين سواريه ومناسبات؟</summary>
-        <p>نعم، من الفكرة للقطعة الجاهزة لأي مناسبة.</p>
+        <summary class="i18n" data-en="Do you make evening and occasion dresses?">بتعملوا فساتين سواريه ومناسبات؟</summary>
+        <p class="i18n" data-en="Yes, from concept to finished piece for any occasion.">نعم، من الفكرة للقطعة الجاهزة لأي مناسبة.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>بتفصلوا ستائر بالمتر؟</summary>
-        <p>نعم، على مقاس الأودة بالظبط.</p>
+        <summary class="i18n" data-en="Do you make curtains by the meter?">بتفصلوا ستائر بالمتر؟</summary>
+        <p class="i18n" data-en="Yes, made to your room's exact measurements.">نعم، على مقاس الأودة بالظبط.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>بتعملوا مفارش وملايات؟</summary>
-        <p>نعم، بخامات كويسة وخياطة متينة.</p>
+        <summary class="i18n" data-en="Do you make bedspreads and linens?">بتعملوا مفارش وملايات؟</summary>
+        <p class="i18n" data-en="Yes, with quality fabric and durable stitching.">نعم، بخامات كويسة وخياطة متينة.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟</summary>
-        <p>نعم، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك.</p>
+        <summary class="i18n" data-en="I have old clothes, can they become a new piece?">عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟</summary>
+        <p class="i18n" data-en="Yes, like old jeans turned into a dress or jumpsuit for your daughter.">نعم، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>بتنتجوا كميات صغيرة لبراند محلي؟</summary>
-        <p>نعم، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى.</p>
+        <summary class="i18n" data-en="Do you produce small quantities for a local brand?">بتنتجوا كميات صغيرة لبراند محلي؟</summary>
+        <p class="i18n" data-en="Yes, if you have a brand and want to start small, we'll produce your first collection.">نعم، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>فين مكان الخياطة بالظبط؟</summary>
-        <p>في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية.</p>
+        <summary class="i18n" data-en="Where exactly is the shop located?">فين مكان الخياطة بالظبط؟</summary>
+        <p class="i18n" data-en="In Hanoville, Othman Ibn Affan St. off Radwan St., Agami, Alexandria.">في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>مواعيد العمل إيه؟</summary>
-        <p>السبت للخميس من ١ ظهرًا لـ١١ مساءً، والجمعة إجازة.</p>
+        <summary class="i18n" data-en="What are the working hours?">مواعيد العمل إيه؟</summary>
+        <p class="i18n" data-en="Saturday to Thursday, 1 PM–11 PM. Closed Friday.">السبت للخميس من ١ ظهرًا لـ١١ مساءً، والجمعة إجازة.</p>
       </details>
     </div>
   </section>
@@ -596,30 +617,30 @@
   <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
 
   <section id="location">
-    <span class="eyebrow">تعالي زورينا</span>
-    <h2 class="section-title">مواعيدنا وموقعنا</h2>
+    <span class="eyebrow i18n" data-en="Visit Us">تعالي زورينا</span>
+    <h2 class="section-title i18n" data-en="Hours &amp; Location">مواعيدنا وموقعنا</h2>
     <div class="loc-grid">
       <div class="loc-card reveal">
-        <h3>مواعيد العمل</h3>
+        <h3 class="i18n" data-en="Working Hours">مواعيد العمل</h3>
         <table class="hours">
-          <tr><td>السبت – الخميس</td><td>١ ظهرًا – ١١ مساءً</td></tr>
-          <tr><td>الجمعة</td><td>إجازة</td></tr>
+          <tr><td class="i18n" data-en="Sat – Thu">السبت – الخميس</td><td class="i18n" data-en="1 PM – 11 PM">١ ظهرًا – ١١ مساءً</td></tr>
+          <tr><td class="i18n" data-en="Friday">الجمعة</td><td class="i18n" data-en="Closed">إجازة</td></tr>
         </table>
       </div>
       <div class="loc-card reveal">
-        <h3>العنوان</h3>
-        <p class="addr-text">الهانوفيل، شارع عثمان بن عفان، متفرع من شارع رضوان، الإسكندرية 21575</p>
-        <a class="btn-ghost" href="https://share.google/siGt2BXUcLppZ58wA" target="_blank" rel="noopener">شوفينا على جوجل</a>
+        <h3 class="i18n" data-en="Address">العنوان</h3>
+        <p class="addr-text i18n" data-en="Hanoville, Othman Ibn Affan St., off Radwan St., Alexandria 21575">الهانوفيل، شارع عثمان بن عفان، متفرع من شارع رضوان، الإسكندرية 21575</p>
+        <a class="btn-ghost i18n" data-en="View on Google" href="https://share.google/siGt2BXUcLppZ58wA" target="_blank" rel="noopener">شوفينا على جوجل</a>
       </div>
     </div>
   </section>
 
   <div class="final-cta">
-    <h2>جاهزون لتنفيذ طلبك</h2>
-    <p>أرسلي صورة التصميم أو تفاصيل القطعة، وسنوضح لك الخطوات والتفاصيل.</p>
+    <h2 class="i18n" data-en="Ready to Get Started">جاهزون لتنفيذ طلبك</h2>
+    <p class="i18n" data-en="Send us your design photo or garment details, and we'll walk you through the next steps.">أرسلي صورة التصميم أو تفاصيل القطعة، وسنوضح لك الخطوات والتفاصيل.</p>
     <a class="btn-primary" href="https://wa.me/201145250019" target="_blank" rel="noopener">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.54 1.93 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.45.2.52.32.06.12.06.7-.18 1.39z"/></svg>
-      واتساب
+      <span class="i18n" data-en="WhatsApp">واتساب</span>
     </a>
   </div>
 
@@ -627,11 +648,11 @@
     <span class="eng-mark">KHYATA</span>
     <h2 style="font-size:22px;">خياطة</h2>
     <div class="footer-links">
-      <a href="https://wa.me/201145250019" target="_blank" rel="noopener">واتساب</a>
-      <a href="https://instagram.com/khyata.eg" target="_blank" rel="noopener">إنستجرام</a>
-      <a href="https://share.google/siGt2BXUcLppZ58wA" target="_blank" rel="noopener">جوجل</a>
+      <a class="i18n" data-en="WhatsApp" href="https://wa.me/201145250019" target="_blank" rel="noopener">واتساب</a>
+      <a class="i18n" data-en="Instagram" href="https://instagram.com/khyata.eg" target="_blank" rel="noopener">إنستجرام</a>
+      <a class="i18n" data-en="Google" href="https://share.google/siGt2BXUcLppZ58wA" target="_blank" rel="noopener">جوجل</a>
     </div>
-    <p class="copyright">© 2026 خياطة | KHYATA — العجمي، الإسكندرية</p>
+    <p class="copyright i18n" data-en="© 2026 KHYATA — Agami, Alexandria">© 2026 خياطة | KHYATA — العجمي، الإسكندرية</p>
   </footer>
 </div>
 
@@ -640,6 +661,25 @@
 </a>
 
 <script>
+  const i18nEls = Array.from(document.querySelectorAll('.i18n'));
+  i18nEls.forEach(el=>{ if(!el.dataset.ar){ el.dataset.ar = el.innerHTML; } });
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = 'ar';
+  function applyLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.body.classList.toggle('lang-en', lang === 'en');
+    i18nEls.forEach(el=>{
+      el.innerHTML = lang === 'en' ? (el.dataset.en || el.dataset.ar) : el.dataset.ar;
+    });
+    if(langToggle){ langToggle.textContent = lang === 'en' ? 'AR' : 'EN'; }
+  }
+  if(langToggle){
+    langToggle.addEventListener('click', ()=> applyLang(currentLang === 'ar' ? 'en' : 'ar'));
+  }
+  applyLang('ar');
+
   const stitches = document.querySelectorAll('.stitch');
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
