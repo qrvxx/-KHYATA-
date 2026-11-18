@@ -67,6 +67,11 @@
     {"@type": "Question", "name": "عندي هدوم قديمة، ممكن تتحول لقطعة جديدة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، زي جينز قديم يتحول لفستان أو جامبسوت لبنتك."}},
     {"@type": "Question", "name": "بتنتجوا كميات صغيرة لبراند محلي؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، لو عندك براند وعايزة تبدأي بكميات صغيرة، بننتجلك مجموعتك الأولى."}},
     {"@type": "Question", "name": "بتفصلوا سكراب طبي وتمريض؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، سكراب للدكاترة والتمريض على المقاس، قطعة أو بالجملة."}},
+    {"@type": "Question", "name": "أشتري القماش الأول ولا أسألكم؟", "acceptedAnswer": {"@type": "Answer", "text": "اسألينا الأول. ابعتي صورة التصميم ونحدد معاكي النوع والكمية بالمتر، عشان ما تشتريش قماش مش مناسب أو ناقص."}},
+    {"@type": "Question", "name": "ينفع أغير التصميم بعد الاعتماد؟", "acceptedAnswer": {"@type": "Answer", "text": "قبل القص ينفع. بعد القص أي تغيير بيتحاسب، وساعات مبيبقاش ممكن."}},
+    {"@type": "Question", "name": "هستلم قطعتي إمتى؟", "acceptedAnswer": {"@type": "Answer", "text": "التصليح بعد يومين، التفصيل العادي بعد أسبوع، وفساتين السواريه من ١٥ لـ٢٠ يوم. الزفاف والكورساج المطرّز والكميات بنتفق على المدة. وبنكلمك أول ما القطعة تجهز."}},
+    {"@type": "Question", "name": "فيه بروفة قبل التسليم؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، ليكي بروفتين قبل التسليم."}},
+    {"@type": "Question", "name": "ينفع أطلب القطعة في يوم واحد؟", "acceptedAnswer": {"@type": "Answer", "text": "ساعات ممكن لو الشغل يسمح، قوليلنا الأول. التنفيذ السريع بيأثر على التشطيب."}},
     {"@type": "Question", "name": "فين مكان الخياطة بالظبط؟", "acceptedAnswer": {"@type": "Answer", "text": "في الهانوفيل، شارع عثمان بن عفان متفرع من شارع رضوان، العجمي، الإسكندرية."}},
     {"@type": "Question", "name": "مواعيد العمل إيه؟", "acceptedAnswer": {"@type": "Answer", "text": "السبت للخميس من ٣ عصرًا لـ١١ مساءً، والجمعة إجازة."}}
   ]
@@ -428,6 +433,46 @@
   table.hours td:last-child{ text-align:end; color:var(--ink); font-weight:600; }
   .addr-text{ color:var(--ink-soft); font-size:15px; margin-bottom:18px; }
 
+  .steps{ list-style:none; counter-reset:step; padding:0; margin:0; }
+  .steps li{
+    counter-increment:step;
+    position:relative;
+    padding-inline-start:44px;
+    margin-bottom:14px;
+    min-height:30px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  .steps li::before{
+    content:counter(step, arabic-indic);
+    position:absolute;
+    inset-inline-start:0;
+    top:0;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:var(--thread-red);
+    color:#fbf6e9;
+    font-weight:700;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  html[lang="en"] .steps li::before{ content:counter(step); }
+  .small-note{ font-size:13.5px; color:var(--ink-soft); margin:14px 0 0; }
+  .notes-card{
+    margin-top:24px;
+    background:var(--bg-soft);
+    border:1px dashed var(--line);
+    border-radius:var(--radius);
+    padding:24px 28px;
+  }
+  .notes-card h3{ font-family:'Cairo'; font-size:17px; font-weight:700; margin-bottom:12px; }
+  .notes-card ul{ margin:0; padding-inline-start:20px; color:var(--ink-soft); font-size:15px; }
+  .notes-card li{ margin-bottom:10px; }
+  .notes-card strong{ color:var(--ink); }
+
   /* ---------- final cta ---------- */
   .final-cta{
     text-align:center;
@@ -585,6 +630,45 @@
 
   <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
 
+  <section id="how">
+    <span class="eyebrow i18n" data-en="How We Work">طريقة الشغل</span>
+    <h2 class="section-title i18n" data-en="How We Work, Step by Step">بنشتغل إزاي؟</h2>
+    <p class="section-lead i18n" data-en="A few simple steps so your piece turns out exactly as agreed.">خطوات بسيطة عشان القطعة تطلع زي ما اتفقنا بالظبط.</p>
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <h3 class="i18n" data-en="Steps">الخطوات</h3>
+        <ol class="steps">
+          <li class="i18n" data-en="Send us a photo of the design on WhatsApp, or visit the shop.">ابعتي لنا صورة التصميم على واتساب أو تعالي المحل.</li>
+          <li class="i18n" data-en="Before buying fabric, ask us to confirm the type and meters needed.">قبل ما تشتري القماش، اسألينا نحدد النوع والكمية بالمتر.</li>
+          <li class="i18n" data-en="We agree on the design and take measurements before cutting. After cutting, any change is charged and sometimes isn't possible.">بنتفق على التصميم ونأخد المقاسات قبل القص. بعد القص أي تغيير بيتحاسب وساعات مبيبقاش ممكن.</li>
+          <li class="i18n" data-en="You get two fittings before delivery.">ليكي بروفتين قبل التسليم.</li>
+          <li class="i18n" data-en="We contact you as soon as your piece is ready.">بنكلمك أول ما القطعة تجهز.</li>
+        </ol>
+      </div>
+      <div class="loc-card reveal">
+        <h3 class="i18n" data-en="Delivery Times">مواعيد التسليم</h3>
+        <table class="hours">
+          <tr><td class="i18n" data-en="Alterations &amp; repairs">تصليح وتعديل</td><td class="i18n" data-en="After 2 days">بعد يومين</td></tr>
+          <tr><td class="i18n" data-en="Regular tailoring">تفصيل عادي</td><td class="i18n" data-en="After 1 week">بعد أسبوع</td></tr>
+          <tr><td class="i18n" data-en="Evening dresses">فساتين سواريه</td><td class="i18n" data-en="15–20 days">من ١٥ لـ٢٠ يوم</td></tr>
+          <tr><td class="i18n" data-en="Embroidered wedding &amp; corsage pieces">زفاف وكورساج مطرّز</td><td class="i18n" data-en="By agreement">بنتفق على المدة</td></tr>
+          <tr><td class="i18n" data-en="Bulk orders (scrubs, brands)">كميات (سكراب وبراندات)</td><td class="i18n" data-en="By agreement">حسب الاتفاق</td></tr>
+        </table>
+        <p class="small-note i18n" data-en="The timeline starts after the design is approved and the fabric and measurements are ready. We confirm the exact date when you place the order.">المدة بتبدأ بعد اعتماد التصميم وتوفير القماش والمقاسات. الميعاد الفعلي بنأكده معاكي وقت الطلب.</p>
+      </div>
+    </div>
+    <div class="notes-card reveal">
+      <h3 class="i18n" data-en="So your piece turns out as agreed">عشان القطعة تطلع زي ما اتفقنا</h3>
+      <ul>
+        <li><strong class="i18n" data-en="Fabric:">القماش:</strong> <span class="i18n" data-en="If the fabric is bought without our review, it may turn out unsuitable for the design and affect the piece. To avoid mistakes, ask us before you buy.">لو القماش اتجاب من غير ما نراجعه معاكي، ممكن يطلع مش مناسب للتصميم ويأثر على القطعة. عشان نتفادى الأخطاء، اسألينا قبل ما تشتري.</span></li>
+        <li><strong class="i18n" data-en="Rush orders:">التنفيذ المستعجل:</strong> <span class="i18n" data-en="Need it in one day? Tell us first and we'll check our workload. Rushed work affects the finishing, so to avoid mistakes we agree on the details before we start.">لو محتاجة القطعة في يوم، قوليلنا الأول ونشوف الشغل. التنفيذ السريع بيأثر على التشطيب، فعشان نتفادى الأخطاء بنتفق على التفاصيل قبل ما نبدأ.</span></li>
+        <li><strong class="i18n" data-en="Delays:">التأخير:</strong> <span class="i18n" data-en="If the delay comes from your side (attendance, fabric, or measurements), the date moves and we set a new one based on our schedule. Making up for the delay with holiday work or extended hours isn't available.">لو حصل تأخير من ناحيتك في الحضور أو في القماش أو المقاسات، الميعاد بيتأجل ونحدد ميعاد جديد حسب جدول الشغل. تعويض التأخير بشغل في الإجازة أو بزيادة ساعات العمل غير متاح.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <svg class="stitch" viewBox="0 0 400 34"><path d="M2 17 Q 100 -10, 200 17 T 398 17"/><circle cx="398" cy="17" r="4"/></svg>
+
   <section id="faq">
     <span class="eyebrow i18n" data-en="FAQ">أسئلة شائعة</span>
     <h2 class="section-title i18n" data-en="Questions About Tailoring in Agami">أسئلة عن التفصيل والتصليح في العجمي</h2>
@@ -624,6 +708,26 @@
       <details class="faq-item reveal">
         <summary class="i18n" data-en="Do you tailor medical scrubs?">بتفصلوا سكراب طبي وتمريض؟</summary>
         <p class="i18n" data-en="Yes, custom-fit scrubs for nurses and doctors, individually or in bulk.">نعم، سكراب للدكاترة والتمريض على المقاس، قطعة أو بالجملة.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="i18n" data-en="Should I buy the fabric first or ask you?">أشتري القماش الأول ولا أسألكم؟</summary>
+        <p class="i18n" data-en="Ask us first. Send the design photo and we'll confirm the fabric type and meters, so you don't buy fabric that's unsuitable or short.">اسألينا الأول. ابعتي صورة التصميم ونحدد معاكي النوع والكمية بالمتر، عشان ما تشتريش قماش مش مناسب أو ناقص.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="i18n" data-en="Can I change the design after approval?">ينفع أغير التصميم بعد الاعتماد؟</summary>
+        <p class="i18n" data-en="Before cutting, yes. After cutting, any change is charged and sometimes isn't possible.">قبل القص ينفع. بعد القص أي تغيير بيتحاسب، وساعات مبيبقاش ممكن.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="i18n" data-en="When will I get my piece?">هستلم قطعتي إمتى؟</summary>
+        <p class="i18n" data-en="Alterations take 2 days, regular tailoring 1 week, and evening dresses 15–20 days. Embroidered wedding or corsage pieces and bulk orders are by agreement. We contact you as soon as your piece is ready.">التصليح بعد يومين، التفصيل العادي بعد أسبوع، وفساتين السواريه من ١٥ لـ٢٠ يوم. الزفاف والكورساج المطرّز والكميات بنتفق على المدة. وبنكلمك أول ما القطعة تجهز.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="i18n" data-en="Is there a fitting before delivery?">فيه بروفة قبل التسليم؟</summary>
+        <p class="i18n" data-en="Yes, you get two fittings before delivery.">نعم، ليكي بروفتين قبل التسليم.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="i18n" data-en="Can I order a piece in one day?">ينفع أطلب القطعة في يوم واحد؟</summary>
+        <p class="i18n" data-en="Sometimes, if our workload allows. Tell us first. A rushed job affects the finishing.">ساعات ممكن لو الشغل يسمح، قوليلنا الأول. التنفيذ السريع بيأثر على التشطيب.</p>
       </details>
       <details class="faq-item reveal">
         <summary class="i18n" data-en="Where exactly is the shop located?">فين مكان الخياطة بالظبط؟</summary>
