@@ -9,16 +9,20 @@
 <meta property="og:description" content="تفصيل وتصليح ملابس حريمي وأطفال، فساتين سواريه، وإسدالات، بخبرة ٣٠ سنة في العجمي، الإسكندرية.">
 <meta property="og:type" content="business.business">
 <meta property="og:url" content="https://khyata.me/">
-<meta property="og:image" content="https://khyata.me/khyata-logo.png">
+<meta property="og:image" content="https://khyata.me/khyata-logo-720.jpg">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="720">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="خياطة | KHYATA — تفصيل وتصليح ملابس في العجمي، الإسكندرية">
 <meta name="twitter:description" content="تفصيل وتصليح ملابس حريمي وأطفال، فساتين سواريه، وإسدالات، بخبرة ٣٠ سنة في العجمي، الإسكندرية.">
-<meta name="twitter:image" content="https://khyata.me/khyata-logo.png">
-<link rel="icon" type="image/png" href="khyata-logo.png">
+<meta name="twitter:image" content="https://khyata.me/khyata-logo-720.jpg">
+<link rel="icon" type="image/png" sizes="96x96" href="khyata-favicon-96.png">
 <link rel="canonical" href="https://khyata.me/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="khyata-logo-720.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;600;700&family=Poppins:wght@600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;600;700&family=Poppins:wght@600&display=swap"></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,7 +30,7 @@
   "@id": "https://khyata.me",
   "url": "https://khyata.me",
   "name": "خياطة | KHYATA",
-  "image": "https://khyata.me/khyata-logo.png",
+  "image": "https://khyata.me/khyata-logo-720.jpg",
   "telephone": "+201145250019",
   "priceRange": "$$",
   "address": {
@@ -534,7 +538,7 @@
 <div class="wrap">
   <header>
     <a class="brand" href="#top" aria-label="خياطة | KHYATA">
-      <img src="khyata-logo.png" alt="خياطة | KHYATA" class="logo-img">
+      <img src="khyata-logo-720.webp" alt="خياطة | KHYATA" class="logo-img" width="720" height="720" fetchpriority="high">
     </a>
     <div class="header-actions">
       <button type="button" id="langToggle" class="lang-toggle" aria-label="Switch language">EN</button>
@@ -544,7 +548,7 @@
 
   <section class="hero" id="top">
     <h1 class="visually-hidden">خياطة | KHYATA — تفصيل وتصليح ملابس في العجمي، الإسكندرية</h1>
-    <img src="khyata-logo.png" alt="خياطة | KHYATA" class="hero-logo">
+    <img src="khyata-logo-720.webp" alt="خياطة | KHYATA" class="hero-logo" width="720" height="720" fetchpriority="high">
     <p class="tagline i18n" data-en="Tailoring &amp; alterations for women and children in Agami, Alexandria.">تفصيل وتصليح ملابس نسائية وأطفال في العجمي، الإسكندرية.</p>
     <div class="hero-ctas">
       <a class="btn-primary" href="https://wa.me/201145250019" target="_blank" rel="noopener">
@@ -791,7 +795,15 @@
   i18nEls.forEach(el=>{ if(!el.dataset.ar){ el.dataset.ar = el.innerHTML; } });
   const langToggle = document.getElementById('langToggle');
   let currentLang = 'ar';
+  function loadEnFont(){
+    if(document.getElementById("enFont")) return;
+    const l = document.createElement("link");
+    l.id = "enFont"; l.rel = "stylesheet";
+    l.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap";
+    document.head.appendChild(l);
+  }
   function applyLang(lang){
+    if(lang === "en") loadEnFont();
     currentLang = lang;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
